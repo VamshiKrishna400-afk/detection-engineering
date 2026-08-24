@@ -33,6 +33,7 @@ The new information can then be used by threat hunters and detection engineers t
 ### How the Four Work Together
 
 The four functions form a continuous defensive cycle. **Threat Intelligence tells the SOC what attackers do and what to look for. Threat Hunting checks whether attackers are doing it inside the organization. Detection Engineering turns discovered attacker behavior into automated detections. The SIEM or EDR generates an alert when suspicious activity is detected. Incident Response investigates, contains, removes, and recovers from the attack. Lessons learned from the incident then improve Threat Intelligence, Threat Hunting, and Detection Engineering.**
+
 ![](defensive_securityfunctions.png)
 
 ### Simple Scenario
