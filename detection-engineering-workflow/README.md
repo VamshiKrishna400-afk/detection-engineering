@@ -161,9 +161,10 @@ Python can be used to automate detection documentation and management. Automatio
 ### Easy to Remember
 
 The detection documentation process can be understood as:
+
 ![](detection_documentation.png)
 
-### Peer Review / Handover
+## Peer Review / Handover
 
 The main idea is: **Before a detection becomes a production alert, it should be reviewed, handed over to Incident Response, documented, enabled, and formally completed.** Peer Review/Handover means having another analyst or team review the detection before it becomes fully operational. A second person can identify mistakes, missing information, excessive false positives, or problems with the detection logic. This also makes it easier to hand the detection over to the SOC or another detection engineer. For example, the detection developer creates the **Query + Unit Tests + Documentation**. Then another analyst reviews: **Is the query correct? Are the tests sufficient? Are false positives documented? Is the response process clear?** The detection is then **Approved / Changes Required**. Once approved, the detection can be handed over to the operational team. In simple terms, **Peer Review / Handover means: “Have another person validate the work and make sure the detection is ready for operational use.”**
 
