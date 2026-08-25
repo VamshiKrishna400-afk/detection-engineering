@@ -131,4 +131,99 @@ After performing the test, Review Data means examining the resulting logs and al
 ### Complete Unit Testing Process
 
 The complete unit testing process can be understood as:
+
 ![](unit_testing.png)
+
+## Detection Documentation
+
+Detection Documentation is the process of documenting a detection so that other analysts understand what it does, why it exists, and how to use it. Detection documentation should be **standardized, stored in the right format, and easy to search and maintain**. A detection shouldn't depend entirely on the person who created it. Good documentation makes investigation, maintenance, troubleshooting, and future improvements easier. For example, documentation might include the **Detection Name: Suspicious PowerShell Execution, Purpose: Detect potentially malicious PowerShell activity, Data Source: Windows Event Logs, Detection Logic: PowerShell + Encoded Command, Severity: High, Expected False Positives: Administrative scripts, Response: Investigate the host and user activity.** In simple terms, **Documentation Creation means: “Record what the detection does, why it exists, and how analysts should respond.”**
+
+### 1. Standardization
+
+Standardization means using a standard format for documenting detections. Standardization makes detections easier to understand, maintain, share, and manage across the security team. For example, **Sigma** can be used as a vendor-neutral detection format. Sigma is a **vendor-agnostic detection format** that can then be converted or used with different security platforms. In simple terms, **Standardization means: “Use a consistent format for all detection rules.”**
+
+### 2. Vendor Format
+
+Vendor Format means using the format required by the security product or platform. Some security tools use their own detection rule formats, and different SIEM and security platforms may require different formats. For example, **Splunk → YAML** and **Elastic → TOML**. Therefore, the same detection may need to be adapted to the platform being used. In simple terms, **Vendor Format means: “Use the format required by the security product.”**
+
+### 3. Custom Format
+
+Custom Format means creating an organization's own detection documentation format. Organizations can design a custom format according to their specific requirements and security processes. For example, a custom format may include **Detection Name, Description, Log Source, Detection Logic, Severity, MITRE ATT&CK, False Positives, and Response**. In simple terms, **Custom Format means: “Create a format that fits the organization's needs.”**
+
+### 4. Documentation Tools
+
+Documentation Tools are platforms used to store detection documentation and support collaboration and version control. Multiple security engineers may create and modify detection rules, so version-controlled platforms help track changes and maintain the history of the detections. Examples include **GitHub, GitLab, and Azure DevOps**. You can store detection rules and track who changed them and when. In simple terms, **Tools means: “Use platforms that make detection documentation easy to manage and collaborate on.”**
+
+### 5. Python
+
+Python can be used to automate detection documentation and management. Automation reduces manual work and helps maintain consistent detection rules. For example, Python can be used to **generate detection files, convert formats, validate rules, and automate documentation**. In simple terms, **Python means: “Automate detection engineering and documentation tasks.”**
+
+### Easy to Remember
+
+The detection documentation process can be understood as:
+
+![](detection_engineering.png)
+
+### Peer Review / Handover
+
+The main idea is: **Before a detection becomes a production alert, it should be reviewed, handed over to Incident Response, documented, enabled, and formally completed.** Peer Review/Handover means having another analyst or team review the detection before it becomes fully operational. A second person can identify mistakes, missing information, excessive false positives, or problems with the detection logic. This also makes it easier to hand the detection over to the SOC or another detection engineer. For example, the detection developer creates the **Query + Unit Tests + Documentation**. Then another analyst reviews: **Is the query correct? Are the tests sufficient? Are false positives documented? Is the response process clear?** The detection is then **Approved / Changes Required**. Once approved, the detection can be handed over to the operational team. In simple terms, **Peer Review / Handover means: “Have another person validate the work and make sure the detection is ready for operational use.”**
+
+### 1. DE Peer Review
+
+DE Peer Review means Detection Engineering reviews the detection before it is enabled. The purpose is to make sure the detection logic is correct, effective, and produces acceptable results. For example, the detection rule is reviewed by checking the **logic, log sources, detection testing, false positives, and MITRE mapping**. In simple terms, **DE Peer Review means: “Validate the detection before production.”**
+
+### 2. Incident Response Handover
+
+Incident Response Handover means handing the detection over to the Incident Response (IR) team. IR needs to understand what the alert means, how to investigate it, and what response actions to take. For example, when a **Suspicious PowerShell Alert** is generated, the IR team receives the **alert details, investigation steps, relevant logs, IOCs, and response actions**. In simple terms, **IR Handover means: “Make sure the response team knows how to handle the alert.”**
+
+### 3. Document Uploaded
+
+Document Uploaded means the detection documentation is uploaded and made available to the team. Analysts need a clear reference when the alert is triggered. The documentation may include the **Detection Name, Description, Severity, Log Source, Detection Logic, MITRE ATT&CK, False Positives, Investigation Steps, and Response Actions**. In simple terms, **Documentation means: “Provide the information needed to investigate the alert.”**
+
+### 4. Alert Enabled
+
+Alert Enabled means the validated detection is enabled in the SIEM or security platform. The detection is now ready to monitor real production activity. For example:
+
+**Suspicious PowerShell Activity**  
+↓  
+**SIEM receives logs**  
+↓  
+**Rule matches**  
+↓  
+**Alert**  
+↓  
+**SOC Analyst**
+
+In simple terms, **Alert Enabled means: “Put the validated detection into production.”**
+
+### 5. Ticket Closure
+
+Ticket Closure means closing the implementation ticket after all required steps are completed. It confirms that the detection has been reviewed, handed over, documented, and enabled successfully. For example:
+
+**✓ Peer Review completed**  
+**✓ IR Handover completed**  
+**✓ Documentation uploaded**  
+**✓ Alert enabled**  
+**✓ Validation completed**  
+↓  
+**Ticket Closed**
+
+In simple terms, **Ticket Closure means: “Confirm that the detection implementation is complete.”**
+
+### How the Process Works
+
+Think of it as a workflow:
+
+![](peer_review.png)
+
+### The Real-World Example
+
+**Step 1 — Peer Review:** Detection Engineering tests a suspicious PowerShell detection.
+
+**Step 2 — Handover:** IR team receives the investigation and response procedure.
+
+**Step 3 — Documentation:** Detection logic, severity, MITRE technique, false positives, and response steps are documented.
+
+**Step 4 — Enable:** The rule is enabled in the SIEM and starts generating alerts.
+
+**Step 5 — Closure:** The team confirms everything works correctly and closes the implementation ticket.
