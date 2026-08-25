@@ -161,8 +161,7 @@ Python can be used to automate detection documentation and management. Automatio
 ### Easy to Remember
 
 The detection documentation process can be understood as:
-
-![](detection_engineering.png)
+![](detection_documentation.png)
 
 ### Peer Review / Handover
 
