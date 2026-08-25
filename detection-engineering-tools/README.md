@@ -98,7 +98,7 @@ Detection engineers use these tools as **sources of data, detection logic, inves
 
 Together, these tools provide the **visibility and capabilities required to build, test, deploy, and improve security detections**.
 
-### Detection Testing and Attack Simulation
+## Detection Testing and Attack Simulation
 
 The main idea is: **Before deploying a detection, you need a way to generate realistic attack activity and verify that your detection catches it.** The tools shown are different ways to simulate attacks or create test environments. A detection needs realistic logs to test against. Instead of waiting for a real attack, you can safely create attack activity in a controlled environment and verify whether the detection generates an alert.
 
