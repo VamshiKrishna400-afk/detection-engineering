@@ -1,5 +1,3 @@
-# Network Security Lab Using VMware/VirtualBox, Kali Linux, Windows 11, Ubuntu, and Zeek
-
 ## 1. VMware Workstation / VirtualBox Installation
 
 * Install VMware Workstation or VirtualBox.
