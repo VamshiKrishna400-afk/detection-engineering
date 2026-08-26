@@ -131,3 +131,5 @@ The main idea is: **Before deploying a detection, you need a way to generate rea
 Think about a detection like a piece of software. You write a detection such as **“Detect suspicious PowerShell execution,”** but you don't want to simply assume it works. You need to create the behavior and verify that the detection catches it. This means generating the attack activity, generating the required logs, running the detection, and checking whether the expected alert is triggered. If the alert is generated as expected, the test passes; if the alert is not generated, the test fails.
 
 That's essentially what unit testing a detection means. **Testing capabilities are tools or environments that can safely generate attacker behavior so you can prove that your detection actually detects it.**
+
+Follow [Installation](installation_procedure.md) guide for setting the lab environment using custom vm's.
