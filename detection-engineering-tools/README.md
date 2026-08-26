@@ -132,4 +132,4 @@ Think about a detection like a piece of software. You write a detection such as 
 
 That's essentially what unit testing a detection means. **Testing capabilities are tools or environments that can safely generate attacker behavior so you can prove that your detection actually detects it.**
 
-Follow [Installation](installation_procedure.md) guide for setting the lab environment using custom vm's.
+Follow [Installation](installation-procedure.md) guide for setting the lab environment using custom vm's.
